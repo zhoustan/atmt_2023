@@ -32,7 +32,7 @@ def get_args():
     # Add optimization arguments
     parser.add_argument('--max-epoch', default=10000, type=int, help='force stop training at specified epoch')
     parser.add_argument('--clip-norm', default=4.0, type=float, help='clip threshold of gradients')
-    parser.add_argument('--lr', default=0.0003, type=float, help='learning rate')
+    parser.add_argument('--lr', default=0.0001, type=float, help='learning rate')
     parser.add_argument('--patience', default=3, type=int,
                         help='number of epochs without improvement on validation set before early stopping')
 
@@ -92,6 +92,8 @@ def main(args):
     # Load last checkpoint if one exists
     state_dict = utils.load_checkpoint(args, model, optimizer)  # lr_scheduler
     last_epoch = state_dict['last_epoch'] if state_dict is not None else -1
+    print(f'**** args.lr: {optimizer.param_groups[0]["lr"]} ****')
+
 
     # Track validation performance for early stopping
     bad_epochs = 0
