@@ -1,0 +1,180 @@
+
+8,0.01
+INFO: Epoch 008: loss 3.192 | lr 0.01 | num_tokens 9.1 | batch_size 8 | grad_norm 9.824 | clip 0.9984
+INFO: Epoch 008: valid_loss 4.02 | num_tokens 9.14 | batch_size 500 | valid_perplexity 55.8
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+8,0.001
+INFO: Epoch 032: loss 1.334 | lr 0.001 | num_tokens 9.1 | batch_size 8 | grad_norm 18.36 | clip 1
+INFO: Epoch 032: valid_loss 2.42 | num_tokens 9.14 | batch_size 500 | valid_perplexity 11.2
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+8,0.0006
+INFO: Epoch 043: loss 1.327 | lr 0.0006 | num_tokens 9.1 | batch_size 8 | grad_norm 20.45 | clip 1
+INFO: Epoch 043: valid_loss 2.33 | num_tokens 9.14 | batch_size 500 | valid_perplexity 10.3
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+8,0.0004
+INFO: Epoch 046: loss 1.511 | lr 0.0004 | num_tokens 9.1 | batch_size 8 | grad_norm 22.45 | clip 1
+INFO: Epoch 046: valid_loss 2.43 | num_tokens 9.14 | batch_size 500 | valid_perplexity 11.4
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+8,0.0002
+INFO: Epoch 076: loss 1.601 | lr 0.0002 | num_tokens 9.1 | batch_size 8 | grad_norm 25.39 | clip 1
+INFO: Epoch 076: valid_loss 2.42 | num_tokens 9.14 | batch_size 500 | valid_perplexity 11.2
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+8,0.0001
+INFO: Epoch 118: loss 1.815 | lr 0.0001 | num_tokens 9.1 | batch_size 8 | grad_norm 27.48 | clip 1
+INFO: Epoch 118: valid_loss 2.47 | num_tokens 9.14 | batch_size 500 | valid_perplexity 11.8
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+32,0.01
+INFO: Epoch 019: loss 2.02 | lr 0.01 | num_tokens 9.17 | batch_size 31.95 | grad_norm 6.587 | clip 0.9457
+INFO: Epoch 019: valid_loss 3.03 | num_tokens 9.14 | batch_size 500 | valid_perplexity 20.7
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+32,0.001
+INFO: Epoch 035: loss 1.643 | lr 0.001 | num_tokens 9.17 | batch_size 31.95 | grad_norm 10.47 | clip 1
+INFO: Epoch 035: valid_loss 2.53 | num_tokens 9.14 | batch_size 500 | valid_perplexity 12.6
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+32,0.0006
+INFO: Epoch 056: loss 1.559 | lr 0.0006 | num_tokens 9.17 | batch_size 31.95 | grad_norm 11.79 | clip 1
+INFO: Epoch 056: valid_loss 2.46 | num_tokens 9.14 | batch_size 500 | valid_perplexity 11.7
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+32,0.0004
+INFO: Epoch 064: loss 1.737 | lr 0.0004 | num_tokens 9.17 | batch_size 31.95 | grad_norm 12.42 | clip 0.9968
+INFO: Epoch 064: valid_loss 2.48 | num_tokens 9.14 | batch_size 500 | valid_perplexity 12
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+32,0.0002
+INFO: Epoch 074: loss 2.311 | lr 0.0002 | num_tokens 9.17 | batch_size 31.95 | grad_norm 11.61 | clip 1
+INFO: Epoch 074: valid_loss 2.78 | num_tokens 9.14 | batch_size 500 | valid_perplexity 16.1
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+32,0.0001
+INFO: Epoch 160: loss 2.225 | lr 0.0001 | num_tokens 9.17 | batch_size 31.95 | grad_norm 12.93 | clip 1
+INFO: Epoch 160: valid_loss 2.66 | num_tokens 9.14 | batch_size 500 | valid_perplexity 14.3
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+64,0.01
+INFO: Epoch 023: loss 2.515 | lr 0.01 | num_tokens 9.309 | batch_size 63.69 | grad_norm 4.842 | clip 0.7261
+INFO: Epoch 023: valid_loss 3.67 | num_tokens 9.14 | batch_size 500 | valid_perplexity 39.1
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+64,0.001
+INFO: Epoch 040: loss 1.767 | lr 0.001 | num_tokens 9.309 | batch_size 63.69 | grad_norm 7.893 | clip 0.9809
+INFO: Epoch 040: valid_loss 2.58 | num_tokens 9.14 | batch_size 500 | valid_perplexity 13.2
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+64,0.0006
+INFO: Epoch 068: loss 1.669 | lr 0.0006 | num_tokens 9.309 | batch_size 63.69 | grad_norm 8.834 | clip 0.9936
+INFO: Epoch 068: valid_loss 2.44 | num_tokens 9.14 | batch_size 500 | valid_perplexity 11.4
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+64,0.0004
+INFO: Epoch 087: loss 1.796 | lr 0.0004 | num_tokens 9.309 | batch_size 63.69 | grad_norm 9.664 | clip 0.9936
+INFO: Epoch 087: valid_loss 2.49 | num_tokens 9.14 | batch_size 500 | valid_perplexity 12
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+64,0.0002
+INFO: Epoch 149: loss 1.948 | lr 0.0002 | num_tokens 9.309 | batch_size 63.69 | grad_norm 9.726 | clip 1
+INFO: Epoch 149: valid_loss 2.51 | num_tokens 9.14 | batch_size 500 | valid_perplexity 12.3
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+64,0.0001
+INFO: Epoch 278: loss 2.013 | lr 0.0001 | num_tokens 9.309 | batch_size 63.69 | grad_norm 10.66 | clip 1
+INFO: Epoch 278: valid_loss 2.5 | num_tokens 9.14 | batch_size 500 | valid_perplexity 12.2
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+128,0.01
+INFO: Epoch 031: loss 2.384 | lr 0.01 | num_tokens 9.586 | batch_size 126.6 | grad_norm 4.164 | clip 0.3291
+INFO: Epoch 031: valid_loss 3.48 | num_tokens 9.14 | batch_size 500 | valid_perplexity 32.5
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+128,0.001
+INFO: Epoch 055: loss 1.785 | lr 0.001 | num_tokens 9.586 | batch_size 126.6 | grad_norm 6.401 | clip 0.7342
+INFO: Epoch 055: valid_loss 2.46 | num_tokens 9.14 | batch_size 500 | valid_perplexity 11.7
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+128,0.0006
+INFO: Epoch 085: loss 1.806 | lr 0.0006 | num_tokens 9.586 | batch_size 126.6 | grad_norm 7.3 | clip 0.8228
+INFO: Epoch 085: valid_loss 2.46 | num_tokens 9.14 | batch_size 500 | valid_perplexity 11.7
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+128,0.0004
+INFO: Epoch 108: loss 1.979 | lr 0.0004 | num_tokens 9.586 | batch_size 126.6 | grad_norm 7.313 | clip 0.8481
+INFO: Epoch 108: valid_loss 2.51 | num_tokens 9.14 | batch_size 500 | valid_perplexity 12.3
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+128,0.0002
+INFO: Epoch 267: loss 1.72 | lr 0.0002 | num_tokens 9.586 | batch_size 126.6 | grad_norm 8.917 | clip 0.9241
+INFO: Epoch 267: valid_loss 2.38 | num_tokens 9.14 | batch_size 500 | valid_perplexity 10.9
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+128,0.0001
+INFO: Epoch 381: loss 2.103 | lr 0.0001 | num_tokens 9.586 | batch_size 126.6 | grad_norm 8.798 | clip 0.9494
+INFO: Epoch 381: valid_loss 2.53 | num_tokens 9.14 | batch_size 500 | valid_perplexity 12.6
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+256,0.01
+INFO: Epoch 034: loss 2.386 | lr 0.01 | num_tokens 10.13 | batch_size 250 | grad_norm 4.024 | clip 0.175
+INFO: Epoch 034: valid_loss 3.28 | num_tokens 9.14 | batch_size 500 | valid_perplexity 26.6
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+256,0.001
+INFO: Epoch 097: loss 1.571 | lr 0.001 | num_tokens 10.13 | batch_size 250 | grad_norm 6.04 | clip 0.525
+INFO: Epoch 097: valid_loss 2.37 | num_tokens 9.14 | batch_size 500 | valid_perplexity 10.7
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+256,0.0006
+INFO: Epoch 147: loss 1.615 | lr 0.0006 | num_tokens 10.13 | batch_size 250 | grad_norm 7.137 | clip 0.65
+INFO: Epoch 147: valid_loss 2.36 | num_tokens 9.14 | batch_size 500 | valid_perplexity 10.5
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+256,0.0004
+INFO: Epoch 194: loss 1.717 | lr 0.0004 | num_tokens 10.13 | batch_size 250 | grad_norm 7.016 | clip 0.7
+INFO: Epoch 194: valid_loss 2.38 | num_tokens 9.14 | batch_size 500 | valid_perplexity 10.8
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+256,0.0002
+INFO: Epoch 390: loss 1.694 | lr 0.0002 | num_tokens 10.13 | batch_size 250 | grad_norm 7.859 | clip 0.85
+INFO: Epoch 390: valid_loss 2.34 | num_tokens 9.14 | batch_size 500 | valid_perplexity 10.4
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+256,0.0001
+INFO: Epoch 658: loss 1.948 | lr 0.0001 | num_tokens 10.13 | batch_size 250 | grad_norm 10.06 | clip 0.825
+INFO: Epoch 658: valid_loss 2.47 | num_tokens 9.14 | batch_size 500 | valid_perplexity 11.9
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+512,0.01
+INFO: Epoch 035: loss 2.458 | lr 0.01 | num_tokens 9.435 | batch_size 500 | grad_norm 2.998 | clip 0.05
+INFO: Epoch 035: valid_loss 3.2 | num_tokens 9.14 | batch_size 500 | valid_perplexity 24.6
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+512,0.001
+INFO: Epoch 155: loss 1.498 | lr 0.001 | num_tokens 9.435 | batch_size 500 | grad_norm 4.001 | clip 0.3
+INFO: Epoch 155: valid_loss 2.3 | num_tokens 9.14 | batch_size 500 | valid_perplexity 10
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+512,0.0006
+INFO: Epoch 172: loss 1.864 | lr 0.0006 | num_tokens 9.435 | batch_size 500 | grad_norm 4.3 | clip 0.3
+INFO: Epoch 172: valid_loss 2.41 | num_tokens 9.14 | batch_size 500 | valid_perplexity 11.1
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+512,0.0004
+INFO: Epoch 211: loss 2.076 | lr 0.0004 | num_tokens 9.435 | batch_size 500 | grad_norm 5.213 | clip 0.3
+INFO: Epoch 211: valid_loss 2.48 | num_tokens 9.14 | batch_size 500 | valid_perplexity 12
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+512,0.0002
+INFO: Epoch 419: loss 2.121 | lr 0.0002 | num_tokens 9.435 | batch_size 500 | grad_norm 5.337 | clip 0.6
+INFO: Epoch 419: valid_loss 2.51 | num_tokens 9.14 | batch_size 500 | valid_perplexity 12.3
+INFO: No validation set improvements observed for 3 epochs. Early stop!
+
+512,0.0001
+INFO: Epoch 825: loss 2.182 | lr 0.0001 | num_tokens 9.435 | batch_size 500 | grad_norm 5.488 | clip 0.65
+INFO: Epoch 825: valid_loss 2.59 | num_tokens 9.14 | batch_size 500 | valid_perplexity 13.4
+INFO: No validation set improvements observed for 3 epochs. Early stop!
