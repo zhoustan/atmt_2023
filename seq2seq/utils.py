@@ -49,7 +49,7 @@ def save_checkpoint(args, model, optimizer, epoch, valid_loss):
     state_dict = {
         'epoch': epoch,
         'val_loss': valid_loss,
-        'best_loss': save_checkpoint.best_loss,
+        'best_loss': save_checkpoint.best_loss, 
         'last_epoch': save_checkpoint.last_epoch,
         'model': model.state_dict(),
         'optimizer': optimizer.state_dict(),
@@ -62,6 +62,9 @@ def save_checkpoint(args, model, optimizer, epoch, valid_loss):
         torch.save(state_dict, os.path.join(args.save_dir, 'checkpoint_best.pt'))
     if last_epoch < epoch:
         torch.save(state_dict, os.path.join(args.save_dir, 'checkpoint_last.pt'))
+    
+    # new_checkponit = 'checkpoint_{}_{}.pt'.format(args.batch_size, str(args.lr).replace('.', '_'))
+    # torch.save(state_dict, os.path.join(args.save_dir, new_checkponit))
 
 
 def load_checkpoint(args, model, optimizer):
