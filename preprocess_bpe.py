@@ -50,10 +50,10 @@ def get_args():
 def main(args):
     os.makedirs(args.dest_dir, exist_ok=True)
     if not args.vocab_src:
-        src_dict = build_dictionary([args.train_prefix + '_bpe.' + args.source_lang])
+        src_dict = build_dictionary([args.train_prefix + '.BPE.' + args.source_lang])
 
         src_dict.finalize(threshold=args.threshold_src, num_words=args.num_words_src)
-        src_dict.save(os.path.join(args.dest_dir, 'dict_bpe.' + args.source_lang))
+        src_dict.save(os.path.join(args.dest_dir, 'dict.BPE.' + args.source_lang))
         if not args.quiet:
             logging.info('Built a source dictionary ({}) with {} words'.format(args.source_lang, len(src_dict)))
 
@@ -63,10 +63,10 @@ def main(args):
             logging.info('Loaded a source dictionary ({}) with {} words'.format(args.target_lang, len(src_dict)))
 
     if not args.vocab_trg:
-        tgt_dict = build_dictionary([args.train_prefix + '_bpe.' + args.target_lang])
+        tgt_dict = build_dictionary([args.train_prefix + '.BPE.' + args.target_lang])
 
         tgt_dict.finalize(threshold=args.threshold_tgt, num_words=args.num_words_tgt)
-        tgt_dict.save(os.path.join(args.dest_dir, 'dict_bpe.' + args.target_lang))
+        tgt_dict.save(os.path.join(args.dest_dir, 'dict.BPE.' + args.target_lang))
         if not args.quiet:
             logging.info('Built a target dictionary ({}) with {} words'.format(args.target_lang, len(tgt_dict)))
 
@@ -77,16 +77,16 @@ def main(args):
 
     def make_split_datasets(lang, dictionary):
         if args.train_prefix is not None:
-            make_binary_dataset(args.train_prefix + '_bpe.' + lang, os.path.join(args.dest_dir, 'train_bpe.' + lang),
+            make_binary_dataset(args.train_prefix + '.BPE.' + lang, os.path.join(args.dest_dir, 'train.BPE.' + lang),
                                 dictionary)
         if args.tiny_train_prefix is not None:
-            make_binary_dataset(args.tiny_train_prefix + '_bpe.' + lang, os.path.join(args.dest_dir, 'tiny_train_bpe.' + lang),
+            make_binary_dataset(args.tiny_train_prefix + '.BPE.' + lang, os.path.join(args.dest_dir, 'tiny_train.BPE.' + lang),
                                 dictionary)
         if args.valid_prefix is not None:
-            make_binary_dataset(args.valid_prefix + '_bpe.' + lang, os.path.join(args.dest_dir, 'valid_bpe.' + lang),
+            make_binary_dataset(args.valid_prefix + '.BPE.' + lang, os.path.join(args.dest_dir, 'valid.BPE.' + lang),
                                 dictionary)
         if args.test_prefix is not None:
-            make_binary_dataset(args.test_prefix + '_bpe.' + lang, os.path.join(args.dest_dir, 'test_bpe.' + lang), dictionary)
+            make_binary_dataset(args.test_prefix + '.BPE.' + lang, os.path.join(args.dest_dir, 'test.BPE.' + lang), dictionary)
 
     make_split_datasets(args.source_lang, src_dict)
     make_split_datasets(args.target_lang, tgt_dict)
