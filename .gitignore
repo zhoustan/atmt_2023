@@ -1,3 +1,5 @@
 assignments/01/baseline/
 __pycache__/
 .idea/
+.DS_Store
+**/.DS_Store
