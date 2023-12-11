@@ -32,6 +32,7 @@ def get_args():
     parser.add_argument('--beam-size', default=5, type=int, help='number of hypotheses expanded in beam search')
     # alpha hyperparameter for length normalization (described as lp in https://arxiv.org/pdf/1609.08144.pdf equation 14)
     parser.add_argument('--alpha', default=0.0, type=float, help='alpha for softer length normalization')
+    parser.add_argument('--Lambda', default=0.0, type=float, help='regularizer for UID')
     parser.add_argument('--n-best', default=1, type=int, help='keep the n best hypothesis')
     return parser.parse_args()
 
@@ -87,7 +88,7 @@ def main(args):
                 go_slice = utils.move_to_cuda(go_slice)
 
             #import pdb;pdb.set_trace()
-            
+
             # Compute the decoder output at the first time step
             decoder_out, _ = model.decoder(go_slice, encoder_out)
 
@@ -161,6 +162,9 @@ def main(args):
                     log_p = torch.where(best_candidate == tgt_dict.unk_idx, backoff_log_p, best_log_p)
                     log_p = log_p[-1]
                     next_word = torch.cat((prev_words[i][1:], next_word[-1:]))
+
+                    Lambda = args.Lambda
+                    log_p -= Lambda * (- log_p) ** 2
 
                     # Get parent node and beam search object for corresponding sentence
                     node = nodes[i]
