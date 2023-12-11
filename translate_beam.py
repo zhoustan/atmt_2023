@@ -32,7 +32,7 @@ def get_args():
     parser.add_argument('--beam-size', default=5, type=int, help='number of hypotheses expanded in beam search')
     # alpha hyperparameter for length normalization (described as lp in https://arxiv.org/pdf/1609.08144.pdf equation 14)
     parser.add_argument('--alpha', default=0.0, type=float, help='alpha for softer length normalization')
-
+    parser.add_argument('--n-best', default=1, type=int, help='keep the n best hypothesis')
     return parser.parse_args()
 
 
@@ -53,10 +53,9 @@ def main(args):
 
     # Load dataset
     test_dataset = Seq2SeqDataset(
-        src_file=os.path.join(args.data, 'test.{:s}'.format(args.source_lang)),
-        tgt_file=os.path.join(args.data, 'test.{:s}'.format(args.target_lang)),
+        src_file=os.path.join(args.data, 'test.BPE.{:s}'.format(args.source_lang)),
+        tgt_file=os.path.join(args.data, 'test.BPE.{:s}'.format(args.target_lang)),
         src_dict=src_dict, tgt_dict=tgt_dict)
-
     test_loader = torch.utils.data.DataLoader(test_dataset, num_workers=1, collate_fn=test_dataset.collater,
                                               batch_sampler=BatchSampler(test_dataset, 9999999,
                                                                          args.batch_size, 1, 0, shuffle=False,
@@ -71,7 +70,7 @@ def main(args):
     progress_bar = tqdm(test_loader, desc='| Generation', leave=False)
 
     # Iterate over the test set
-    all_hyps = {}
+    all_hyps = [{} for _ in range(args.n_best)]
     for i, sample in enumerate(progress_bar):
 
         # Create a beam search object or every input sentence in batch
@@ -195,7 +194,17 @@ def main(args):
                 search.prune()
 
         # Segment into sentences
-        best_sents = torch.stack([search.get_best()[1].sequence[1:].cpu() for search in searches])
+        # best_sents = torch.stack([search.get_best()[1].sequence[1:].cpu() for search in searches])
+
+        n_best_sents = []
+
+        for search in searches:
+            n_best = search.get_n_best(args.n_best)
+            for i in range(args.n_best):
+                n_best_sents.append(n_best[i][1].sequence[1:].cpu())
+        best_sents = torch.stack(n_best_sents)
+
+
         decoded_batch = best_sents.numpy()
         #import pdb;pdb.set_trace()
 
@@ -214,15 +223,23 @@ def main(args):
         # Convert arrays of indices into strings of words
         output_sentences = [tgt_dict.string(sent) for sent in output_sentences]
 
-        for ii, sent in enumerate(output_sentences):
-            all_hyps[int(sample['id'].data[ii])] = sent
+        output_sentences_list = [list() for _ in range(args.n_best)]
+        for i in range(len(output_sentences)):
+            output_sentences_list[i % args.n_best].append(output_sentences[i])
 
+        for i in range(len(all_hyps)):
+            all_hyp = all_hyps[i]
+            for ii, sent in enumerate(output_sentences_list[i]):
+                all_hyp[int(sample['id'].data[ii])] = sent
 
     # Write to file
     if args.output is not None:
-        with open(args.output, 'w') as out_file:
-            for sent_id in range(len(all_hyps.keys())):
-                out_file.write(all_hyps[sent_id] + '\n')
+        for i in range(len(all_hyps)):
+            all_hyp = all_hyps[i]
+            write_path = args.output.split('.')[0] + '_n' + str(i + 1) + '.txt'
+            with open(write_path, 'w') as out_file:
+                for sent_id in range(len(all_hyp.keys())):
+                    out_file.write(all_hyp[sent_id] + '\n')
 
 
 if __name__ == '__main__':
